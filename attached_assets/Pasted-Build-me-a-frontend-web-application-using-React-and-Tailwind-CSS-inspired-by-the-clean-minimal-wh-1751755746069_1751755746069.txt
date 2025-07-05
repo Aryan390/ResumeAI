@@ -1,0 +1,66 @@
+Build me a frontend web application using React and Tailwind CSS, inspired by the clean, minimal, whitespace-heavy Apple website design language, with a modern typography and elegant color palette.
+
+Requirements:
+✅ Use React Router for routing, with the following routes:
+
+/signin → Sign In page
+
+/signup → Sign Up page
+
+/dashboard → Main app page after login
+
+✅ Use React Context API to manage and persist the authentication state of the user.
+
+✅ Design and build:
+
+A Sign In page with email/password fields and a submit button.
+
+A Sign Up page with email/password/confirm-password fields and a submit button.
+
+A Dashboard page where:
+
+A text box allows the user to enter a prompt.
+
+Upon submitting the prompt, display an AI-generated resume below the textbox (you can use mocked static data for the resume for now).
+
+Design Guidelines:
+🎨 Typography & Colors:
+
+Use clean, legible, modern typography (e.g., Inter, San Francisco, Helvetica Neue, or similar).
+
+Use an elegant, neutral color palette inspired by the Apple website: whites, light grays, subtle blacks, with accent colors used sparingly.
+
+🖼 Layout & Whitespace:
+
+Design should feel spacious with generous padding and margins.
+
+Align elements consistently and keep the UI minimal and uncluttered.
+
+Use Tailwind utilities effectively to create a premium look & feel.
+
+💻 Other Notes:
+
+Make sure the pages are responsive and work well on desktop and mobile.
+
+Use semantic HTML wherever possible.
+
+Organize the code in a clean folder structure.
+
+Deliverables:
+React project with:
+
+Tailwind CSS configured.
+
+React Router set up.
+
+Context API implementation for auth.
+
+Components/pages as per the requirements.
+
+A professional UI inspired by Apple’s design language.
+
+give me a background image , innovative for sign-in and sign-up pages
+
+add a node backend with mongodb for user storage, also use jwt for authentication, implement dark mode in the application.
+
+Also don't use typescript, give me everything in javascript, in react.
