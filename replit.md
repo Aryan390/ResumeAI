@@ -92,11 +92,13 @@ The application follows a modern full-stack architecture with clear separation o
 
 ```
 Changelog:
-- July 05, 2025. Initial setup
+- July 05, 2025. Initial setup with TypeScript
+- July 05, 2025. Converted entire application to JavaScript (.jsx files) per user request
 ```
 
 ## User Preferences
 
 ```
 Preferred communication style: Simple, everyday language.
+Technology preference: JavaScript (.jsx) instead of TypeScript (.tsx)
 ```
