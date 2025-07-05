@@ -8,6 +8,9 @@ import { ThemeProvider } from "@/context/theme-context";
 import { ProtectedRoute } from "./lib/protected-route";
 import Dashboard from "@/pages/dashboard";
 import AuthPage from "@/pages/auth-page";
+import SupportPage from "@/pages/support-page";
+import PricingPage from "@/pages/pricing-page";
+import AboutPage from "@/pages/about-page";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -15,6 +18,9 @@ function Router() {
     <Switch>
       <ProtectedRoute path="/" component={Dashboard} />
       <Route path="/auth" component={AuthPage} />
+      <Route path="/support" component={SupportPage} />
+      <Route path="/pricing" component={PricingPage} />
+      <Route path="/about" component={AboutPage} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "@/hooks/use-auth";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -33,6 +34,7 @@ const resumeSchema = z.object({
 export default function Dashboard() {
   const { user, logoutMutation } = useAuth();
   const { toast } = useToast();
+  const [location, setLocation] = useLocation();
   const [generatedResume, setGeneratedResume] = useState(null);
 
   const form = useForm({
@@ -97,6 +99,10 @@ export default function Dashboard() {
     logoutMutation.mutate();
   };
 
+  const handleNavigation = (path) => {
+    setLocation(path);
+  };
+
   const formatResumeContent = (content) => {
     try {
       const parsed = JSON.parse(content);
@@ -114,13 +120,46 @@ export default function Dashboard() {
       <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
-                <FileText className="w-6 h-6 text-white" />
+            <div className="flex items-center space-x-8">
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                  <FileText className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">ResumeAI</h1>
+                  <p className="text-gray-600 dark:text-gray-400 mt-1">Create your perfect resume with AI assistance</p>
+                </div>
               </div>
-              <div>
-                <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">Dashboard</h1>
-                <p className="text-gray-600 dark:text-gray-400 mt-1">Create your perfect resume with AI assistance</p>
+              
+              {/* Navigation */}
+              <div className="hidden md:flex space-x-6">
+                <Button
+                  variant="ghost"
+                  className="text-blue-600 dark:text-blue-400 font-medium"
+                >
+                  Dashboard
+                </Button>
+                <Button
+                  variant="ghost"
+                  onClick={() => handleNavigation("/pricing")}
+                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                >
+                  Pricing
+                </Button>
+                <Button
+                  variant="ghost"
+                  onClick={() => handleNavigation("/about")}
+                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                >
+                  About
+                </Button>
+                <Button
+                  variant="ghost"
+                  onClick={() => handleNavigation("/support")}
+                  className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                >
+                  Support
+                </Button>
               </div>
             </div>
             
