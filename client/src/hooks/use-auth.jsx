@@ -1,8 +1,5 @@
 import { createContext, useContext } from "react";
-import {
-  useQuery,
-  useMutation,
-} from "@tanstack/react-query";
+import { useQuery, useMutation } from "@tanstack/react-query";
 import { getQueryFn, apiRequest, queryClient } from "../lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 
@@ -49,7 +46,8 @@ export function AuthProvider({ children }) {
       queryClient.setQueryData(["/api/user"], user);
       toast({
         title: "Account created!",
-        description: "Welcome to ResumeAI. Your account has been created successfully.",
+        description:
+          "Welcome to ResumeAI. Your account has been created successfully.",
       });
     },
     onError: (error) => {
